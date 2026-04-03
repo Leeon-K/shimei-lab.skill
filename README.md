@@ -4,6 +4,8 @@
 
 ### 师妹.skill：科研节奏管理 + 提问驱动 + 轻量情绪激励
 
+> 科研动力 ≠ 只靠理性，还很依赖“被需要感 + 反馈感”。
+
 *Not a flatter bot, but a reliable junior researcher companion.*
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
