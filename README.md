@@ -48,6 +48,11 @@
 - 反馈基于用户刚提供的内容
 - 低噪音、长期可用
 
+4. 合成数据生成（shimei 特有）
+- 在没有真实“师妹聊天记录”时生成模拟数据
+- 输出双层产物：`raw_chat.jsonl` + `distilled_profile.json`
+- 便于后续蒸馏、评估和风格对齐
+
 ## 安装
 
 ### Claude Code
@@ -81,6 +86,20 @@ pip3 install -r requirements.txt
 /shimei-lab 今天我跑了 baseline，但新模型 val 指标没提升，下一步我该先查哪里？
 ```
 
+## 生成模拟聊天数据
+
+当你没有可导入的真实聊天记录时，可以先生成一批结构化模拟数据：
+
+```bash
+python3 tools/synthetic_generator.py \
+  --config synthetic_data/config.json \
+  --out-dir data/synthetic
+```
+
+输出文件：
+- `data/synthetic/raw_chat.jsonl`：逐条消息事件流（可回放、可审计）
+- `data/synthetic/distilled_profile.json`：风格统计与模板特征（可直接喂给 prompt/skill）
+
 ## 项目结构
 
 ```text
@@ -94,7 +113,10 @@ shimei-lab/
 ├── tools/
 │   ├── progress_tracker.py      # 进度记录与待办闭环
 │   ├── question_generator.py    # 卡点问题生成
-│   └── session_manager.py       # 会话状态管理
+│   ├── session_manager.py       # 会话状态管理
+│   └── synthetic_generator.py   # 模拟聊天数据生成器
+├── synthetic_data/
+│   └── config.json              # 合成数据配置
 ├── data/
 │   └── .gitkeep
 ├── examples/

@@ -93,6 +93,7 @@ python3 ${CLAUDE_SKILL_DIR}/tools/progress_tracker.py log \
 | 本地记录进度 | `Bash` → `python3 tools/progress_tracker.py` |
 | 生成追问候选 | `Bash` → `python3 tools/question_generator.py` |
 | 会话状态读取/更新 | `Bash` → `python3 tools/session_manager.py` |
+| 生成模拟聊天数据 | `Bash` → `python3 tools/synthetic_generator.py` |
 
 ## 输出格式（固定）
 

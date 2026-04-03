@@ -1,0 +1,29 @@
+{
+  "persona": {
+    "name": "shimei",
+    "tone": "warm_stable",
+    "praise_style": "specific_not_flattery",
+    "question_style": "high_leverage_single_question"
+  },
+  "lab_context": {
+    "domain": "nlp",
+    "project_stage": "experiment",
+    "milestone": "ablation done"
+  },
+  "scenarios": {
+    "types": [
+      "experiment_blocker",
+      "writing_blocker",
+      "pre_meeting"
+    ]
+  },
+  "generation": {
+    "sessions": 20,
+    "turns_per_session": [
+      6,
+      12
+    ],
+    "difficulty_curve": "rising",
+    "seed": 42
+  }
+}
