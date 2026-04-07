@@ -90,6 +90,12 @@ git clone https://github.com/Leeon-K/shimei-lab.skill.git .claude/skills/shimei-
 # git clone https://github.com/Leeon-K/shimei-lab.skill.git ~/.claude/skills/shimei-lab
 ```
 
+### OpenClaw
+
+```bash
+git clone https://github.com/Leeon-K/shimei-lab.skill.git ~/.openclaw/workspace/skills/shimei-lab
+```
+
 ### Optional Python dependency
 
 ```bash

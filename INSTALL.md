@@ -18,3 +18,9 @@ git clone https://github.com/Leeon-K/shimei-lab.skill.git ~/.claude/skills/shime
 ```bash
 pip3 install -r requirements.txt
 ```
+
+## OpenClaw Install
+
+```bash
+git clone https://github.com/Leeon-K/shimei-lab.skill.git ~/.openclaw/workspace/skills/shimei-lab
+```

@@ -52,6 +52,10 @@ mkdir -p .claude/skills
 git clone https://github.com/Leeon-K/shimei-lab.skill.git .claude/skills/shimei-lab
 ```
 
+```bash
+git clone https://github.com/Leeon-K/shimei-lab.skill.git ~/.openclaw/workspace/skills/shimei-lab
+```
+
 ## 使い方
 
 ```text
