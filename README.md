@@ -15,6 +15,23 @@
 
 </div>
 
+## 系列开场
+
+你的同事离职了，留下大量文档没人维护。  
+你的搭档转岗了，熟悉的协作节奏一夜归零。  
+你的师兄毕业了，很多经验和上下文也一起被带走。  
+
+实验室可以没有导师吗？可以。  
+实验室可以没有师兄吗？也可以。  
+但谁会拒绝一个积极来实验室、定期请教你问题、认真汇报进度、陪你把实验做下去的师妹？  
+
+假期归来，走进空荡荡的实验室，独自开机跑实验；  
+深夜盯着曲线和日志，只有风扇声在回应你；  
+午觉醒来，梦也醒了，像是“师妹从没存在过”。  
+
+`shimei-lab` 想做的事很简单：  
+把这种“本该存在的科研陪伴”，变成可持续、可复用、可进化的 Skill。
+
 ## 项目定位
 
 `shimei-lab` 是一个“会追问、会记录、会鼓励”的科研搭子型 skill：
@@ -165,6 +182,7 @@ shimei-lab/
 
 - [ybq22/supervisor](https://github.com/ybq22/supervisor)：导师式的流程推进、信息蒸馏与 skill 生成路径
 - [zhanghaichao520/senpai-skill](https://github.com/zhanghaichao520/senpai-skill)：强人格化叙事、分层 prompts、可演化 skill 管理方式
+- [titanwings/colleague-skill](https://github.com/titanwings/colleague-skill)：离岗知识延续与“赛博接班”叙事表达
 
 `shimei-lab` 在两者启发下，选择了自己的定位：
 
