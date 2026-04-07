@@ -7,3 +7,7 @@ Generate one next action with:
 - clear deadline (today / tomorrow / this week)
 
 When repeated blocker appears for 2-3 rounds, output a short stage summary.
+
+If blocker is solved:
+- provide one optional reward suggestion
+- keep reward short, seasonal-friendly, and non-intrusive

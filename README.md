@@ -55,6 +55,11 @@
 - 输出双层产物：`raw_chat.jsonl` + `distilled_profile.json`
 - 便于后续蒸馏、评估和风格对齐
 
+5. 每日定时追问 + 奖励模式（shimei 特有）
+- 支持设置固定时间每天催科研进度汇报
+- 每日自动生成“一个关键问题 + 汇报格式”
+- 问题解决后可追加轻量奖励文案（如春天看花、拍照）
+
 ## 安装
 
 ### Claude Code
@@ -102,6 +107,27 @@ python3 tools/synthetic_generator.py \
 - `data/synthetic/raw_chat.jsonl`：逐条消息事件流（可回放、可审计）
 - `data/synthetic/distilled_profile.json`：风格统计与模板特征（可直接喂给 prompt/skill）
 
+## 每日定时追问与奖励模式
+
+设置每日提醒（例如每天 9:30，Asia/Shanghai）：
+
+```bash
+python3 tools/checkin_scheduler.py set --project default --timezone Asia/Shanghai --hour 9 --minute 30
+python3 tools/checkin_scheduler.py status
+```
+
+生成当日追问文案：
+
+```bash
+python3 tools/daily_checkin.py --project default --topic experiment
+```
+
+当阶段任务完成后，可开启奖励模式（春天场景）：
+
+```bash
+python3 tools/daily_checkin.py --project default --topic meeting --include-reward --reward-mode spring
+```
+
 ## 项目结构
 
 ```text
@@ -116,7 +142,9 @@ shimei-lab/
 │   ├── progress_tracker.py      # 进度记录与待办闭环
 │   ├── question_generator.py    # 卡点问题生成
 │   ├── session_manager.py       # 会话状态管理
-│   └── synthetic_generator.py   # 模拟聊天数据生成器
+│   ├── synthetic_generator.py   # 模拟聊天数据生成器
+│   ├── checkin_scheduler.py     # 每日定时状态管理
+│   └── daily_checkin.py         # 每日追问与奖励文案生成
 ├── synthetic_data/
 │   └── config.json              # 合成数据配置
 ├── data/
