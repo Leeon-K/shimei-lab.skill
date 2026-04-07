@@ -1,2 +1,4 @@
 data/synthetic/
 data/checkin_schedule.json
+data/progress_log.jsonl
+data/session_state.json

@@ -5,6 +5,7 @@ import random
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Optional
+from zoneinfo import ZoneInfo
 
 ROOT = Path(__file__).resolve().parents[1]
 PROGRESS_LOG = ROOT / "data" / "progress_log.jsonl"
@@ -29,9 +30,9 @@ QUESTIONS = {
 
 REWARDS = {
     "spring": [
-        "如果今天这轮推进完成，我们就给自己一个春天奖励：去玉渊潭看花。",
-        "这块收住以后，给自己安排一个轻松奖励：春天出门走走拍几张花。",
-        "这一段搞定后就兑现奖励，去看花放松一下再继续冲下一段。",
+        "如果今天这轮推进完成，我们就给自己一个春天奖励：去玉渊潭公园拍几张照片。",
+        "这块收住以后，给自己安排一个轻松奖励：去玉渊潭公园帮我拍拍春天。",
+        "这一段搞定后就兑现奖励，去玉渊潭公园拍照放松一下再继续冲下一段。",
     ],
     "photo": [
         "你愿意的话，解决完这轮我们安排一次轻松拍照，顺便记录春天。",
@@ -51,7 +52,10 @@ def _load_latest(project: str) -> dict:
     for line in PROGRESS_LOG.read_text(encoding="utf-8").splitlines():
         if not line.strip():
             continue
-        obj = json.loads(line)
+        try:
+            obj = json.loads(line)
+        except json.JSONDecodeError:
+            continue
         if obj.get("project") == project:
             rows.append(obj)
     return rows[-1] if rows else {}
@@ -75,6 +79,7 @@ def compose(
     reward_mode: str,
     include_reward: bool,
     seed: Optional[int],
+    timezone_name: str,
 ) -> str:
     latest = _load_latest(project)
     done = latest.get("done", "（还没收到你今天的进度）")
@@ -94,7 +99,10 @@ def compose(
     if include_reward:
         parts.append(f"奖励模式：{_pick_reward(reward_mode, seed)}")
 
-    parts.append(f"发送时间（UTC）：{datetime.now(timezone.utc).isoformat()}")
+    now_utc = datetime.now(timezone.utc)
+    now_local = now_utc.astimezone(ZoneInfo(timezone_name))
+    parts.append(f"发送时间（{timezone_name}）：{now_local.isoformat()}")
+    parts.append(f"发送时间（UTC）：{now_utc.isoformat()}")
     return "\n".join(parts)
 
 
@@ -104,6 +112,7 @@ def main() -> None:
     parser.add_argument("--topic", choices=sorted(QUESTIONS), default="experiment")
     parser.add_argument("--include-reward", action="store_true")
     parser.add_argument("--reward-mode", choices=sorted(REWARDS), default="default")
+    parser.add_argument("--timezone", default="Asia/Shanghai")
     parser.add_argument("--seed", type=int)
     args = parser.parse_args()
 
@@ -114,6 +123,7 @@ def main() -> None:
             reward_mode=args.reward_mode,
             include_reward=args.include_reward,
             seed=args.seed,
+            timezone_name=args.timezone,
         )
     )
 

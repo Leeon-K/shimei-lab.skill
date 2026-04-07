@@ -8,3 +8,7 @@ Message should include:
 - required reply format: 今日进度 / 当前卡点 / 下一步
 
 If user solved last blocker, append optional reward suggestion.
+
+Automation hint:
+- Use `tools/checkin_scheduler.py status` to check due state.
+- Use `tools/checkin_dispatcher.py` for one-shot dispatch + mark sent.

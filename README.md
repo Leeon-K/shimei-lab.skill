@@ -86,10 +86,10 @@
 ```bash
 # 当前项目安装
 mkdir -p .claude/skills
-git clone https://github.com/your-org/shimei-lab.git .claude/skills/shimei-lab
+git clone https://github.com/Leeon-K/shimei-lab.skill.git .claude/skills/shimei-lab
 
 # 全局安装
-# git clone https://github.com/your-org/shimei-lab.git ~/.claude/skills/shimei-lab
+# git clone https://github.com/Leeon-K/shimei-lab.skill.git ~/.claude/skills/shimei-lab
 ```
 
 ### Python 依赖（可选）
@@ -138,13 +138,19 @@ python3 tools/checkin_scheduler.py status
 生成当日追问文案：
 
 ```bash
-python3 tools/daily_checkin.py --project default --topic experiment
+python3 tools/daily_checkin.py --project default --topic experiment --timezone Asia/Shanghai
 ```
 
 当阶段任务完成后，可开启奖励模式（春天场景）：
 
 ```bash
 python3 tools/daily_checkin.py --project default --topic meeting --include-reward --reward-mode spring
+```
+
+自动触发（适合 cron）：
+
+```bash
+python3 tools/checkin_dispatcher.py --topic experiment
 ```
 
 ## 项目结构
@@ -156,14 +162,17 @@ shimei-lab/
 │   ├── intake.md                # 进度收集与目标对齐
 │   ├── feedback.md              # 三段式反馈模板
 │   ├── questioning.md           # 关键追问策略
-│   └── planning.md              # next action 生成
+│   ├── planning.md              # next action 生成
+│   ├── checkin_schedule.md      # 定时提醒策略
+│   └── reward_mode.md           # 奖励模式策略
 ├── tools/
 │   ├── progress_tracker.py      # 进度记录与待办闭环
 │   ├── question_generator.py    # 卡点问题生成
 │   ├── session_manager.py       # 会话状态管理
 │   ├── synthetic_generator.py   # 模拟聊天数据生成器
 │   ├── checkin_scheduler.py     # 每日定时状态管理
-│   └── daily_checkin.py         # 每日追问与奖励文案生成
+│   ├── daily_checkin.py         # 每日追问与奖励文案生成
+│   └── checkin_dispatcher.py    # 到点自动分发并标记
 ├── synthetic_data/
 │   └── config.json              # 合成数据配置
 ├── data/

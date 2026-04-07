@@ -2,7 +2,7 @@
 name: shimei-lab
 description: Research rhythm companion skill. Track progress, ask focused questions, schedule daily check-ins, and provide grounded encouragement with optional reward mode. | 科研节奏管理伙伴：记录进度、每日定时追问、生成关键问题、给出基于事实的鼓励与奖励模式。
 argument-hint: "[today-progress-or-blocker]"
-version: 0.3.0
+version: 0.4.0
 user-invocable: true
 allowed-tools: Read, Write, Edit, Bash
 ---
@@ -54,6 +54,12 @@ python3 ${CLAUDE_SKILL_DIR}/tools/checkin_scheduler.py set \
   --project "${PROJECT_NAME:-default}" \
   --timezone "Asia/Shanghai" \
   --hour 10 --minute 0
+```
+
+如需自动分发（例如定时任务）：
+
+```bash
+python3 ${CLAUDE_SKILL_DIR}/tools/checkin_dispatcher.py --topic experiment
 ```
 
 ### Step 1: Intake（对齐）
@@ -117,6 +123,7 @@ python3 ${CLAUDE_SKILL_DIR}/tools/progress_tracker.py log \
 | 生成模拟聊天数据 | `Bash` → `python3 tools/synthetic_generator.py` |
 | 设置/查询每日定时 | `Bash` → `python3 tools/checkin_scheduler.py` |
 | 生成每日提醒文案 | `Bash` → `python3 tools/daily_checkin.py` |
+| 到点自动分发提醒 | `Bash` → `python3 tools/checkin_dispatcher.py` |
 
 ## 输出格式（固定）
 

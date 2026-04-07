@@ -4,13 +4,13 @@
 
 ```bash
 mkdir -p .claude/skills
-git clone https://github.com/your-org/shimei-lab.git .claude/skills/shimei-lab
+git clone https://github.com/Leeon-K/shimei-lab.skill.git .claude/skills/shimei-lab
 ```
 
 ## Global Install
 
 ```bash
-git clone https://github.com/your-org/shimei-lab.git ~/.claude/skills/shimei-lab
+git clone https://github.com/Leeon-K/shimei-lab.skill.git ~/.claude/skills/shimei-lab
 ```
 
 ## Optional Dependencies
