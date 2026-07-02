@@ -32,7 +32,7 @@ def tail(n: int) -> None:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="shimei-lab progress tracker")
+    parser = argparse.ArgumentParser(description="research-companion progress tracker")
     sub = parser.add_subparsers(dest="cmd", required=True)
 
     p_log = sub.add_parser("log")

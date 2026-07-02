@@ -1,8 +1,8 @@
 <div align="center">
 
-# shimei-lab
+# research-companion
 
-### shimei.skill: 研究のリズム管理 + 質問駆動 + やさしいモチベーション
+### research-companion.skill: 研究のリズム管理 + 質問駆動 + やさしいモチベーション
 
 > 研究の継続は理性だけでは足りない。必要とされる感覚と、フィードバックが重要です。
 
@@ -12,7 +12,7 @@
 
 研究進捗を何度でも確認しに来る、AI 後輩。
 
-`shimei.skill` は次の役割を担います。
+`research-companion.skill` は次の役割を担います。
 
 - 「あとでやる」を覚えて、適切なタイミングで再確認する
 - 進まない時に、定期的に進捗を聞く
@@ -49,17 +49,17 @@
 
 ```bash
 mkdir -p .claude/skills
-git clone https://github.com/Leeon-K/shimei-lab.skill.git .claude/skills/shimei-lab
+git clone https://github.com/Leeon-K/research-companion.skill.git .claude/skills/research-companion
 ```
 
 ```bash
-git clone https://github.com/Leeon-K/shimei-lab.skill.git ~/.openclaw/workspace/skills/shimei-lab
+git clone https://github.com/Leeon-K/research-companion.skill.git ~/.openclaw/workspace/skills/research-companion
 ```
 
 ## 使い方
 
 ```text
-/shimei-lab
+/research-companion
 ```
 
 ## 定時チェックイン

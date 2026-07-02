@@ -126,7 +126,7 @@ def load_config(path: Path) -> Config:
         raise ValueError("No valid scenarios selected")
 
     return Config(
-        persona_name=persona.get("name", "shimei"),
+        persona_name=persona.get("name", "research_companion"),
         encouragement_mode=persona.get("praise_style", "specific_not_flattery"),
         sessions=int(generation.get("sessions", 20)),
         turns_min=max(2, int(turns[0])),
@@ -255,7 +255,7 @@ def write_outputs(rows: list[dict[str, Any]], profile: dict[str, Any], out_dir: 
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Generate synthetic shimei chat dataset")
+    parser = argparse.ArgumentParser(description="Generate synthetic research companion chat dataset")
     parser.add_argument("--config", default="synthetic_data/config.json", help="Path to config json")
     parser.add_argument("--out-dir", default="data/synthetic", help="Output directory")
     return parser.parse_args()

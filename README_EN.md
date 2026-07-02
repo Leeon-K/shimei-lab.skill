@@ -1,8 +1,8 @@
 <div align="center">
 
-# shimei-lab
+# research-companion
 
-### shimei.skill: Research Rhythm + Question-Driven Coaching + Gentle Motivation
+### research-companion.skill: Research Rhythm + Question-Driven Coaching + Gentle Motivation
 
 > Research momentum is not only rational. It also depends on being needed and getting feedback.
 
@@ -22,7 +22,7 @@ An AI junior who keeps coming back to ask about your research progress.
 You do not lack AI tools that can answer questions.
 You lack one that does not let your TODOs disappear silently.
 
-`shimei.skill` is that lab junior:
+`research-companion.skill` is that lab junior:
 
 - She remembers your "I'll do it later" items.
 - She checks in on schedule if progress stalls.
@@ -34,7 +34,7 @@ She helps make research less draining and easier to sustain.
 
 ## Positioning
 
-`shimei-lab` is a companion skill that asks, tracks, and encourages:
+`research-companion` is a companion skill that asks, tracks, and encourages:
 
 - Track research progress with continuity.
 - Trigger periodic question-based follow-ups.
@@ -67,12 +67,12 @@ One line summary:
 - Positive feedback grounded in user facts
 - Low-noise style for long-term usage
 
-4. Synthetic Data Generation (shimei-specific)
+4. Synthetic Data Generation (research-companion-specific)
 - Generate data when no real chat history exists
 - Output `raw_chat.jsonl` + `distilled_profile.json`
 - Useful for distillation, evaluation, and prompt alignment
 
-5. Daily Scheduled Check-ins + Reward Mode (shimei-specific)
+5. Daily Scheduled Check-ins + Reward Mode (research-companion-specific)
 - Fixed-time daily research check-ins
 - Auto-generate one key question + reply format
 - Optional lightweight reward line after milestones
@@ -84,16 +84,16 @@ One line summary:
 ```bash
 # Install in current project
 mkdir -p .claude/skills
-git clone https://github.com/Leeon-K/shimei-lab.skill.git .claude/skills/shimei-lab
+git clone https://github.com/Leeon-K/research-companion.skill.git .claude/skills/research-companion
 
 # Global install
-# git clone https://github.com/Leeon-K/shimei-lab.skill.git ~/.claude/skills/shimei-lab
+# git clone https://github.com/Leeon-K/research-companion.skill.git ~/.claude/skills/research-companion
 ```
 
 ### OpenClaw
 
 ```bash
-git clone https://github.com/Leeon-K/shimei-lab.skill.git ~/.openclaw/workspace/skills/shimei-lab
+git clone https://github.com/Leeon-K/research-companion.skill.git ~/.openclaw/workspace/skills/research-companion
 ```
 
 ### Optional Python dependency
@@ -107,13 +107,13 @@ pip3 install -r requirements.txt
 Invoke in Claude Code:
 
 ```text
-/shimei-lab
+/research-companion
 ```
 
 Example:
 
 ```text
-/shimei-lab I finished baseline, but the new model did not improve val score. What should I check first?
+/research-companion I finished baseline, but the new model did not improve val score. What should I check first?
 ```
 
 ## Generate Synthetic Chat Data
@@ -158,7 +158,7 @@ python3 tools/checkin_dispatcher.py --topic experiment
 ## Project Structure
 
 ```text
-shimei-lab/
+research-companion/
 ├── SKILL.md
 ├── prompts/
 ├── tools/

@@ -1,8 +1,8 @@
 <div align="center">
 
-# shimei-lab
+# research-companion
 
-### shimei.skill: 연구 리듬 관리 + 질문 기반 진행 + 부드러운 동기 부여
+### research-companion.skill: 연구 리듬 관리 + 질문 기반 진행 + 부드러운 동기 부여
 
 > 연구를 계속하게 만드는 힘은 이성만이 아닙니다. 필요하다는 감각과 피드백이 중요합니다.
 
@@ -12,7 +12,7 @@
 
 연구 진행 상황을 주기적으로 다시 물어보는 AI 후배.
 
-`shimei.skill`은 다음을 돕습니다.
+`research-companion.skill`은 다음을 돕습니다.
 
 - "나중에 할게"를 기억하고 적절한 시점에 다시 확인
 - 진행이 멈추면 정해진 시간에 체크인
@@ -49,17 +49,17 @@
 
 ```bash
 mkdir -p .claude/skills
-git clone https://github.com/Leeon-K/shimei-lab.skill.git .claude/skills/shimei-lab
+git clone https://github.com/Leeon-K/research-companion.skill.git .claude/skills/research-companion
 ```
 
 ```bash
-git clone https://github.com/Leeon-K/shimei-lab.skill.git ~/.openclaw/workspace/skills/shimei-lab
+git clone https://github.com/Leeon-K/research-companion.skill.git ~/.openclaw/workspace/skills/research-companion
 ```
 
 ## 사용
 
 ```text
-/shimei-lab
+/research-companion
 ```
 
 ## 정시 체크인

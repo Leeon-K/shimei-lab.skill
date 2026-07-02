@@ -9,7 +9,7 @@ TEMPLATES = {
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="shimei-lab question generator")
+    parser = argparse.ArgumentParser(description="research-companion question generator")
     parser.add_argument("--type", choices=sorted(TEMPLATES), default="experiment")
     args = parser.parse_args()
     print(TEMPLATES[args.type])

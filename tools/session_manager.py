@@ -22,7 +22,7 @@ def write_state(payload: str) -> None:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="shimei-lab session manager")
+    parser = argparse.ArgumentParser(description="research-companion session manager")
     sub = parser.add_subparsers(dest="cmd", required=True)
     sub.add_parser("get")
     p_set = sub.add_parser("set")
